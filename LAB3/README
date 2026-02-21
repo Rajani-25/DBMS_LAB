@@ -1,1 +1,15 @@
-
+DBMS_LAB/
+ ├── LAB1/
+ ├── LAB2/
+ ├── LAB3/
+ │    ├── TABLE/
+ │    │    ├── COURSE TABLE.png
+ │    │    ├── DEPARTMENT TABLE.png
+ │    │    ├── ENROLLMENT TABLE.png
+ │    │    ├── FACULTY TABLE.png
+ │    │    ├── STUDENT TABLE.png
+ │    │
+ │    ├── DB-Lab-3QUESTION.pdf
+ │    ├── LAB_3_ASSIGNMENTSOLUTION.sql
+ │
+ ├── README.md
