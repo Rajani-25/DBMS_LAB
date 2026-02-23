@@ -1,15 +1,28 @@
-DBMS_LAB/
- ├── LAB1/
- ├── LAB2/
- ├── LAB3/
- │    ├── TABLE/
- │    │    ├── COURSE TABLE.png
- │    │    ├── DEPARTMENT TABLE.png
- │    │    ├── ENROLLMENT TABLE.png
- │    │    ├── FACULTY TABLE.png
- │    │    ├── STUDENT TABLE.png
- │    │
- │    ├── DB-Lab-3QUESTION.pdf
- │    ├── LAB_3_ASSIGNMENTSOLUTION.sql
- │
- ├── README.md
+Relationships Implemented
+
+One Department → Many Faculty
+One Department → Many Courses
+One Department → Many Students
+One Faculty → Many Courses
+Many Students ↔ Many Courses (via Enrollment)
+Foreign key constraints ensure data integrity and consistency.
+
+How to Run the Project?
+Open Oracle SQL*Plus or VS Code with Oracle extension.
+Connect to your database.
+Run the lab3_final.sql file.
+
+Execute:
+
+SELECT * FROM Department;
+SELECT * FROM Faculty;
+SELECT * FROM Course;
+SELECT * FROM Student;
+SELECT * FROM Enrollment;
+Verify output.
+
+Data Sources
+Official college website
+Department webpages
+Academic structure and syllabus
+(Student contact numbers are dummy values used for database variation.)
