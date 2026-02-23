@@ -1,0 +1,362 @@
+SQL> SELECT student_id AS Roll_No, student_name AS Student_Name, dob AS Date_of_Birth, gender AS Gender, contact_number AS Contact_No, department_id AS Dept_ID FROM Student;
+
+ROLL_NO    STUDENT_NAME                                       DATE_OF_BIRTH                  GENDER     CONTACT_NO      DEPT_ID
+---------- -------------------------------------------------- ------------------------------ ---------- --------------- ----------
+S01        Rahul Kumar                                        14-MAY-03                      Male       9123456789      DO1
+S02        Anjali Singh                                       18-FEB-04                      Female     9234567890      DO2
+S03        Vikash Yadav                                       21-NOV-03                      Male       9345678901      DO3
+S04        Sneha Kumari                                       09-JAN-04                      Female     9456789012      DO4
+S05        Rohit Raj                                          25-AUG-03                      Male       9567890123      DO5
+S06        Pooja Sharma                                       17-JUN-04                      Female     9678901234      DO6
+S07        Aditya Kumar                                       03-DEC-03                      Male       9789012345      DO7
+S08        Kavita Devi                                        19-MAR-04                      Female     9890123456      DO1
+S09        Manish Raj                                         27-SEP-03                      Male       9012345678      DO2
+S10        Riya Sharma                                        30-JUL-04                      Female     9123098765      DO3
+S11        Aman Verma                                         11-OCT-03                      Male       9234012345      DO4
+S12        Neha Gupta                                         22-JAN-04                      Female     9345012345      DO5
+S13        Saurabh Mishra                                     15-APR-03                      Male       9456012345      DO6
+S14        Priyanka Kumari                                    05-SEP-04                      Female     9567012345      DO7
+S15        Deepak Kumar                                       19-DEC-03                      Male       9678012345      DO1
+
+SQL> SELECT student_id AS Roll_No, student_name AS Student_Name, department_id AS Dept_ID FROM Student;
+
+ROLL_NO    STUDENT_NAME                                       DEPT_ID
+---------- -------------------------------------------------- ----------
+S01        Rahul Kumar                                        DO1
+S02        Anjali Singh                                       DO2
+S03        Vikash Yadav                                       DO3
+S04        Sneha Kumari                                       DO4
+S05        Rohit Raj                                          DO5
+S06        Pooja Sharma                                       DO6
+S07        Aditya Kumar                                       DO7
+S08        Kavita Devi                                        DO1
+S09        Manish Raj                                         DO2
+S10        Riya Sharma                                        DO3
+S11        Aman Verma                                         DO4
+S12        Neha Gupta                                         DO5
+S13        Saurabh Mishra                                     DO6
+S14        Priyanka Kumari                                    DO7
+S15        Deepak Kumar                                       DO1
+
+SQL> SELECT faculty_id AS Faculty_ID, faculty_name AS Faculty_Name, designation AS Designation, email AS Email_Address FROM Faculty;
+
+FACULTY_ID FACULTY_NAME                                       DESIGNATION                                        EMAIL_ADDRESS
+---------- -------------------------------------------------- -------------------------------------------------- --------------------------------------------------
+F01        Prof. Kunal Kumar                                  Assistant Professor(HOD)                           kunal1989kumar@gmail.com
+F02        Prof. Akhilesh Kumar                               Assistant Professor                                akhileshkumar3804@gmail.com
+F03        Prof. Akhilesh kumar                               Assistant Professor(HOD)                           akhileshkumar3804@gmail.com
+F04        Prof.Nishikant Kumar                               Assistant Professor                                nishikantbpmce32@gmail.com
+F05        Prof. Arbind Kumar Amar                            Associate Professor, Principal-in-charge           ak_amar73@yahoo.com
+F06        Dr. Ajay Giri                                      Assistant Professor(HOD)                           ajay_giri05@rediffmail.com
+F07        Prof. Uttam Kumar                                  Assistant Professor                                uttamiitpl@gmail.com
+F08        Prof. Manisha Kumari Singh                         Assistant Professor                                manisha.ks24@gmail.com
+F09        Prof. Md. Izhar                                    Assistant Professor                                mdizhar1996@gmail.com
+F10        Prof. Amit Kumar                                   Assistant Professor                                amitkumar.cse@gmail.com
+F11        Prof.Sujeet Kumar                                  Assistant Professor                                ksujeet.cs@gmail.com
+F12        Prof. Praveen Kumar                                Assistant Professor                                praveenkumaryadav782@gmail.com
+
+SQL> SELECT course_id AS Course_ID, course_name AS Course_Name, credits AS Credits, department_id AS Dept_ID, faculty_id AS Faculty_ID FROM Course;
+
+COURSE_ID  COURSE_NAME                                           CREDITS DEPT_ID    FACULTY_ID
+---------- -------------------------------------------------- ---------- ---------- ----------
+C01        Structural Analysis                                         4 DO1        F01
+C02        Advanced Civil Engineering                                  4 DO2        F03
+C03        Thermodynamics                                              3 DO3        F07
+C04        Electrical Machines                                         3 DO4        F05
+C05        Database Management Systems                                 4 DO5        F11
+C06        Artificial Intelligence                                     4 DO6        F08
+C07        Machine Learning                                            4 DO6        F09
+C08        Computer Graphics                                           3 DO7        F12
+C09        Operating Systems                                           4 DO5        F10
+C10        Fluid Mechanics                                             3 DO3        F06
+
+
+SQL> SELECT student_id AS Roll_No, course_id AS Course_ID, semester AS Semester_No, grade AS Final_Grade FROM Enrollment;
+
+ROLL_NO    COURSE_ID  SEMESTER_NO FINAL
+---------- ---------- ----------- -----
+S01        C01                  3 A
+S02        C02                  3 B+
+S03        C03                  3 A
+S04        C04                  3 B
+S05        C05                  3 A+
+S06        C06                  3 A
+S07        C07                  3 B+
+S08        C08                  3 A
+S09        C09                  3 B
+S10        C10                  3 A
+S11        C01                  3 B+
+S12        C02                  3 A
+S13        C06                  3 A+
+S14        C07                  3 B
+S15        C03                  3 A
+
+
+SQL> SELECT * FROM Student WHERE department_id = 'DO1';
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- ------------------------------
+S01        Rahul Kumar                                        14-MAY-03 Male       9123456789      DO1
+S08        Kavita Devi                                        19-MAR-04 Female     9890123456      DO1
+S15        Deepak Kumar                                       19-DEC-03 Male       9678012345      DO1
+
+SQL> SELECT * FROM Student WHERE gender = 'Female';
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- ------------------------------
+S02        Anjali Singh                                       18-FEB-04 Female     9234567890      DO2
+S04        Sneha Kumari                                       09-JAN-04 Female     9456789012      DO4
+S06        Pooja Sharma                                       17-JUN-04 Female     9678901234      DO6
+S08        Kavita Devi                                        19-MAR-04 Female     9890123456      DO1
+S10        Riya Sharma                                        30-JUL-04 Female     9123098765      DO3
+S12        Neha Gupta                                         22-JAN-04 Female     9345012345      DO5
+S14        Priyanka Kumari                                    05-SEP-04 Female     9567012345      DO7
+
+SQL> SELECT * FROM Faculty WHERE designation LIKE 'Assistant Professor';
+
+FACULTY_ID      FACULTY_NAME         DESIGNATION                                        EMAIL                DEPARTMENT_ID
+--------------- -------------------- -------------------------------------------------- -------------------- --------------------
+F02             Prof. Akhilesh Kumar Assistant Professor                                akhileshkumar3804@gm DO1
+F04             Prof.Nishikant Kumar Assistant Professor                                nishikantbpmce32@gma DO2
+F07             Prof. Uttam Kumar    Assistant Professor                                uttamiitpl@gmail.com DO3
+F08             Prof. Manisha Kumari Assistant Professor                                manisha.ks24@gmail.c DO6
+F09             Prof. Md. Izhar      Assistant Professor                                mdizhar1996@gmail.co DO6
+F10             Prof. Amit Kumar     Assistant Professor                                amitkumar.cse@gmail. DO6
+F11             Prof.Sujeet Kumar    Assistant Professor                                ksujeet.cs@gmail.com DO5
+F12             Prof. Praveen Kumar  Assistant Professor                                praveenkumaryadav782 DO5
+
+
+SQL> SELECT * FROM Faculty WHERE department_id = 'DO2';
+
+FACULTY_ID      FACULTY_NAME         DESIGNATION                                        EMAIL                DEPARTMENT_ID
+--------------- -------------------- -------------------------------------------------- -------------------- --------------------
+F03             Prof. Akhilesh kumar Assistant Professor(HOD)                           akhileshkumar3804@gm DO2
+F04             Prof.Nishikant Kumar Assistant Professor                                nishikantbpmce32@gma DO2
+
+SQL> SELECT * FROM Course WHERE credits >= 4;
+
+COURSE_ID  COURSE_NAME                                           CREDITS DEPARTMENT_ID        FACULTY_ID
+---------- -------------------------------------------------- ---------- -------------------- ---------------
+C01        Structural Analysis                                         4 DO1                  F01
+C02        Advanced Civil Engineering                                  4 DO2                  F03
+C05        Database Management Systems                                 4 DO5                  F11
+C06        Artificial Intelligence                                     4 DO6                  F08
+C07        Machine Learning                                            4 DO6                  F09
+C09        Operating Systems                                           4 DO5                  F10
+
+
+SQL> SELECT * FROM Student WHERE dob > TO_DATE('2003-01-01','YYYY-MM-DD');
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- --------------------
+S01        Rahul Kumar                                        14-MAY-03 Male       9123456789      DO1
+S02        Anjali Singh                                       18-FEB-04 Female     9234567890      DO2
+S03        Vikash Yadav                                       21-NOV-03 Male       9345678901      DO3
+S04        Sneha Kumari                                       09-JAN-04 Female     9456789012      DO4
+S05        Rohit Raj                                          25-AUG-03 Male       9567890123      DO5
+S06        Pooja Sharma                                       17-JUN-04 Female     9678901234      DO6
+S07        Aditya Kumar                                       03-DEC-03 Male       9789012345      DO7
+S08        Kavita Devi                                        19-MAR-04 Female     9890123456      DO1
+S09        Manish Raj                                         27-SEP-03 Male       9012345678      DO2
+S10        Riya Sharma                                        30-JUL-04 Female     9123098765      DO3
+S11        Aman Verma                                         11-OCT-03 Male       9234012345      DO4
+S12        Neha Gupta                                         22-JAN-04 Female     9345012345      DO5
+S13        Saurabh Mishra                                     15-APR-03 Male       9456012345      DO6
+S14        Priyanka Kumari                                    05-SEP-04 Female     9567012345      DO7
+S15        Deepak Kumar                                       19-DEC-03 Male       9678012345      DO1
+
+
+SQL> SELECT * FROM Enrollment WHERE semester = 4;
+
+no rows selected
+
+SQL> SELECT * FROM Student ORDER BY student_name ASC;
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- --------------------
+S07        Aditya Kumar                                       03-DEC-03 Male       9789012345      DO7
+S11        Aman Verma                                         11-OCT-03 Male       9234012345      DO4
+S02        Anjali Singh                                       18-FEB-04 Female     9234567890      DO2
+S15        Deepak Kumar                                       19-DEC-03 Male       9678012345      DO1
+S08        Kavita Devi                                        19-MAR-04 Female     9890123456      DO1
+S09        Manish Raj                                         27-SEP-03 Male       9012345678      DO2
+S12        Neha Gupta                                         22-JAN-04 Female     9345012345      DO5
+S06        Pooja Sharma                                       17-JUN-04 Female     9678901234      DO6
+S14        Priyanka Kumari                                    05-SEP-04 Female     9567012345      DO7
+S01        Rahul Kumar                                        14-MAY-03 Male       9123456789      DO1
+S10        Riya Sharma                                        30-JUL-04 Female     9123098765      DO3
+S05        Rohit Raj                                          25-AUG-03 Male       9567890123      DO5
+S13        Saurabh Mishra                                     15-APR-03 Male       9456012345      DO6
+S04        Sneha Kumari                                       09-JAN-04 Female     9456789012      DO4
+S03        Vikash Yadav                                       21-NOV-03 Male       9345678901      DO3
+
+
+SQL> SELECT * FROM Student ORDER BY dob DESC;
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- --------------------
+S14        Priyanka Kumari                                    05-SEP-04 Female     9567012345      DO7
+S10        Riya Sharma                                        30-JUL-04 Female     9123098765      DO3
+S06        Pooja Sharma                                       17-JUN-04 Female     9678901234      DO6
+S08        Kavita Devi                                        19-MAR-04 Female     9890123456      DO1
+S02        Anjali Singh                                       18-FEB-04 Female     9234567890      DO2
+S12        Neha Gupta                                         22-JAN-04 Female     9345012345      DO5
+S04        Sneha Kumari                                       09-JAN-04 Female     9456789012      DO4
+S15        Deepak Kumar                                       19-DEC-03 Male       9678012345      DO1
+S07        Aditya Kumar                                       03-DEC-03 Male       9789012345      DO7
+S03        Vikash Yadav                                       21-NOV-03 Male       9345678901      DO3
+S11        Aman Verma                                         11-OCT-03 Male       9234012345      DO4
+S09        Manish Raj                                         27-SEP-03 Male       9012345678      DO2
+S05        Rohit Raj                                          25-AUG-03 Male       9567890123      DO5
+S01        Rahul Kumar                                        14-MAY-03 Male       9123456789      DO1
+S13        Saurabh Mishra                                     15-APR-03 Male       9456012345      DO6
+
+
+SQL> SELECT * FROM Faculty ORDER BY designation ASC;
+
+FACULTY_ID      FACULTY_NAME         DESIGNATION                                        EMAIL                DEPARTMENT_ID
+--------------- -------------------- -------------------------------------------------- -------------------- --------------------
+F10             Prof. Amit Kumar     Assistant Professor                                amitkumar.cse@gmail. DO6
+F09             Prof. Md. Izhar      Assistant Professor                                mdizhar1996@gmail.co DO6
+F02             Prof. Akhilesh Kumar Assistant Professor                                akhileshkumar3804@gm DO1
+F04             Prof.Nishikant Kumar Assistant Professor                                nishikantbpmce32@gma DO2
+F11             Prof.Sujeet Kumar    Assistant Professor                                ksujeet.cs@gmail.com DO5
+F12             Prof. Praveen Kumar  Assistant Professor                                praveenkumaryadav782 DO5
+F07             Prof. Uttam Kumar    Assistant Professor                                uttamiitpl@gmail.com DO3
+F08             Prof. Manisha Kumari Assistant Professor                                manisha.ks24@gmail.c DO6
+F03             Prof. Akhilesh kumar Assistant Professor(HOD)                           akhileshkumar3804@gm DO2
+F01             Prof. Kunal Kumar    Assistant Professor(HOD)                           kunal1989kumar@gmail DO1
+F06             Dr. Ajay Giri        Assistant Professor(HOD)                           ajay_giri05@rediffma DO3
+F05             Prof. Arbind Kumar A Associate Professor, Principal-in-charge           ak_amar73@yahoo.com  DO3
+
+
+SQL> SELECT * FROM Course ORDER BY credits DESC;
+
+COURSE_ID  COURSE_NAME                                           CREDITS DEPARTMENT_ID        FACULTY_ID
+---------- -------------------------------------------------- ---------- -------------------- ---------------
+C01        Structural Analysis                                         4 DO1                  F01
+C02        Advanced Civil Engineering                                  4 DO2                  F03
+C05        Database Management Systems                                 4 DO5                  F11
+C09        Operating Systems                                           4 DO5                  F10
+C07        Machine Learning                                            4 DO6                  F09
+C06        Artificial Intelligence                                     4 DO6                  F08
+C08        Computer Graphics                                           3 DO7                  F12
+C10        Fluid Mechanics                                             3 DO3                  F06
+C04        Electrical Machines                                         3 DO4                  F05
+C03        Thermodynamics                                              3 DO3                  F07
+
+SQL> SELECT * FROM Student WHERE ROWNUM <= 3;
+
+STUDENT_ID STUDENT_NAME                                       DOB       GENDER     CONTACT_NUMBER  DEPARTMENT_ID
+---------- -------------------------------------------------- --------- ---------- --------------- --------------------
+S01        Rahul Kumar                                        14-MAY-03 Male       9123456789      DO1
+S02        Anjali Singh                                       18-FEB-04 Female     9234567890      DO2
+S03        Vikash Yadav                                       21-NOV-03 Male       9345678901      DO3
+
+SQL> SELECT * FROM Course WHERE ROWNUM <= 5;
+
+COURSE_ID  COURSE_NAME                                           CREDITS DEPARTMENT_ID        FACULTY_ID
+---------- -------------------------------------------------- ---------- -------------------- ---------------
+C01        Structural Analysis                                         4 DO1                  F01
+C02        Advanced Civil Engineering                                  4 DO2                  F03
+C03        Thermodynamics                                              3 DO3                  F07
+C04        Electrical Machines                                         3 DO4                  F05
+C05        Database Management Systems                                 4 DO5                  F11
+
+SQL> SELECT student_name, FLOOR(MONTHS_BETWEEN(SYSDATE,dob)/12) AS Age FROM Student;
+
+STUDENT_NAME                                              AGE
+-------------------------------------------------- ----------
+Rahul Kumar                                                22
+Anjali Singh                                               22
+Vikash Yadav                                               22
+Sneha Kumari                                               22
+Rohit Raj                                                  22
+Pooja Sharma                                               21
+Aditya Kumar                                               22
+Kavita Devi                                                21
+Manish Raj                                                 22
+Riya Sharma                                                21
+Aman Verma                                                 22
+Neha Gupta                                                 22
+Saurabh Mishra                                             22
+Priyanka Kumari                                            21
+Deepak Kumar                                               22
+
+
+SQL> SELECT course_name, credits + 1 AS Updated_Credits FROM Course;
+
+COURSE_NAME                                        UPDATED_CREDITS
+-------------------------------------------------- ---------------
+Structural Analysis                                              5
+Advanced Civil Engineering                                       5
+Thermodynamics                                                   4
+Electrical Machines                                              4
+Database Management Systems                                      5
+Artificial Intelligence                                          5
+Machine Learning                                                 5
+Computer Graphics                                                4
+Operating Systems                                                5
+Fluid Mechanics                                                  4
+
+
+SQL> SELECT student_id, course_id, semester, grade AS Final_Grade FROM Enrollment;
+
+STUDENT_ID COURSE_ID    SEMESTER FINAL
+---------- ---------- ---------- -----
+S01        C01                 3 A
+S02        C02                 3 B+
+S03        C03                 3 A
+S04        C04                 3 B
+S05        C05                 3 A+
+S06        C06                 3 A
+S07        C07                 3 B+
+S08        C08                 3 A
+S09        C09                 3 B
+S10        C10                 3 A
+S11        C01                 3 B+
+S12        C02                 3 A
+S13        C06                 3 A+
+S14        C07                 3 B
+S15        C03                 3 A
+
+
+SQL> SELECT student_name, EXTRACT(YEAR FROM dob) AS Birth_Year FROM Student;
+
+STUDENT_NAME                                       BIRTH_YEAR
+-------------------------------------------------- ----------
+Rahul Kumar                                              2003
+Anjali Singh                                             2004
+Vikash Yadav                                             2003
+Sneha Kumari                                             2004
+Rohit Raj                                                2003
+Pooja Sharma                                             2004
+Aditya Kumar                                             2003
+Kavita Devi                                              2004
+Manish Raj                                               2003
+Riya Sharma                                              2004
+Aman Verma                                               2003
+Neha Gupta                                               2004
+Saurabh Mishra                                           2003
+Priyanka Kumari                                          2004
+Deepak Kumar                                             2003
+
+
+SQL> SELECT faculty_name, SUBSTR(email, INSTR(email,'@')+1) AS Email_Domain FROM Faculty;
+
+FACULTY_NAME         EMAIL_DOMAIN
+-------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Prof. Kunal Kumar    gmail.com
+Prof. Akhilesh Kumar gmail.com
+Prof. Akhilesh kumar gmail.com
+Prof.Nishikant Kumar gmail.com
+Prof. Arbind Kumar A yahoo.com
+Dr. Ajay Giri        rediffmail.com
+Prof. Uttam Kumar    gmail.com
+Prof. Manisha Kumari gmail.com
+Prof. Md. Izhar      gmail.com
+Prof. Amit Kumar     gmail.com
+Prof.Sujeet Kumar    gmail.com
+Prof. Praveen Kumar  gmail.com
+
+
