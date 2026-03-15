@@ -1,0 +1,353 @@
+SQL> SELECT S.student_id, S.student_name, E.course_id FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id;
+
+STUDENT_ID STUDENT_NAME                                       COURSE_ID
+---------- -------------------------------------------------- ----------
+S01        Rahul Kumar                                        C01
+S02        Anjali Singh                                       C02
+S03        Vikash Yadav                                       C03
+S04        Sneha Kumari                                       C04
+S05        Rohit Raj                                          C05
+S06        Pooja Sharma                                       C06
+S07        Aditya Kumar                                       C07
+S08        Kavita Devi                                        C08
+S09        Manish Raj                                         C09
+S10        Riya Sharma                                        C10
+S11        Aman Verma                                         C01
+S12        Neha Gupta                                         C02
+S13        Saurabh Mishra                                     C06
+S14        Priyanka Kumari                                    C07
+S15        Deepak Kumar                                       C03
+
+15 rows selected.
+
+SQL> SELECT S.student_name, E.semester FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id;
+
+STUDENT_NAME                                         SEMESTER
+-------------------------------------------------- ----------
+Rahul Kumar                                                 3
+Anjali Singh                                                3
+Vikash Yadav                                                3
+Sneha Kumari                                                3
+Rohit Raj                                                   3
+Pooja Sharma                                                3
+Aditya Kumar                                                3
+Kavita Devi                                                 3
+Manish Raj                                                  3
+Riya Sharma                                                 3
+Aman Verma                                                  3
+Neha Gupta                                                  3
+Saurabh Mishra                                              3
+Priyanka Kumari                                             3
+Deepak Kumar                                                3
+
+15 rows selected.
+
+SQL> SELECT S.student_name, E.grade FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id;
+
+STUDENT_NAME                                       GRADE
+-------------------------------------------------- -----
+Rahul Kumar                                        A
+Anjali Singh                                       B+
+Vikash Yadav                                       A
+Sneha Kumari                                       B
+Rohit Raj                                          A+
+Pooja Sharma                                       A
+Aditya Kumar                                       B+
+Kavita Devi                                        A
+Manish Raj                                         B
+Riya Sharma                                        A
+Aman Verma                                         B+
+Neha Gupta                                         A
+Saurabh Mishra                                     A+
+Priyanka Kumari                                    B
+Deepak Kumar                                       A
+
+15 rows selected.
+
+SQL> SELECT C.course_name, C.credits, F.faculty_name FROM Course C INNER JOIN Faculty F ON C.faculty_id = F.faculty_id;
+
+COURSE_NAME                                           CREDITS FACULTY_NAME
+-------------------------------------------------- ---------- --------------------
+Structural Analysis                                         4 Prof. Kunal Kumar
+Advanced Civil Engineering                                  4 Prof. Akhilesh kumar
+Electrical Machines                                         3 Prof. Arbind Kumar A
+Fluid Mechanics                                             3 Dr. Ajay Giri
+Thermodynamics                                              3 Prof. Uttam Kumar
+Artificial Intelligence                                     4 Prof. Manisha Kumari
+Machine Learning                                            4 Prof. Md. Izhar
+Operating Systems                                           4 Prof. Amit Kumar
+Database Management Systems                                 4 Prof.Sujeet Kumar
+Computer Graphics                                           3 Prof. Praveen Kumar
+
+10 rows selected.
+
+SQL> SELECT C.course_name FROM Course C INNER JOIN Faculty F ON C.faculty_id = F.faculty_id WHERE F.faculty_id = 'F01';
+
+COURSE_NAME
+--------------------------------------------------
+Structural Analysis
+
+SQL> SELECT F.faculty_name, F.designation, C.course_name FROM Faculty F INNER JOIN Course C ON F.faculty_id = C.faculty_id;
+
+FACULTY_NAME         DESIGNATION                                        COURSE_NAME
+-------------------- -------------------------------------------------- --------------------------------------------------
+Prof. Kunal Kumar    Assistant Professor(HOD)                           Structural Analysis
+Prof. Akhilesh kumar Assistant Professor(HOD)                           Advanced Civil Engineering
+Prof. Arbind Kumar A Associate Professor, Principal-in-charge           Electrical Machines
+Dr. Ajay Giri        Assistant Professor(HOD)                           Fluid Mechanics
+Prof. Uttam Kumar    Assistant Professor                                Thermodynamics
+Prof. Manisha Kumari Assistant Professor                                Artificial Intelligence
+Prof. Md. Izhar      Assistant Professor                                Machine Learning
+Prof. Amit Kumar     Assistant Professor                                Operating Systems
+Prof.Sujeet Kumar    Assistant Professor                                Database Management Systems
+Prof. Praveen Kumar  Assistant Professor                                Computer Graphics
+
+10 rows selected.
+
+SQL> SELECT S.student_name, C.course_name FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id INNER JOIN Course C ON E.course_id = C.course_id;
+
+STUDENT_NAME                                       COURSE_NAME
+-------------------------------------------------- --------------------------------------------------
+Rahul Kumar                                        Structural Analysis
+Anjali Singh                                       Advanced Civil Engineering
+Vikash Yadav                                       Thermodynamics
+Sneha Kumari                                       Electrical Machines
+Rohit Raj                                          Database Management Systems
+Pooja Sharma                                       Artificial Intelligence
+Aditya Kumar                                       Machine Learning
+Kavita Devi                                        Computer Graphics
+Manish Raj                                         Operating Systems
+Riya Sharma                                        Fluid Mechanics
+Aman Verma                                         Structural Analysis
+Neha Gupta                                         Advanced Civil Engineering
+Saurabh Mishra                                     Artificial Intelligence
+Priyanka Kumari                                    Machine Learning
+Deepak Kumar                                       Thermodynamics
+
+15 rows selected.
+
+SQL> SELECT S.student_name, C.course_name, E.semester FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id INNER JOIN Course C ON E.course_id = C.course_id;
+
+STUDENT_NAME                                       COURSE_NAME                                          SEMESTER
+-------------------------------------------------- -------------------------------------------------- ----------
+Rahul Kumar                                        Structural Analysis                                         3
+Anjali Singh                                       Advanced Civil Engineering                                  3
+Vikash Yadav                                       Thermodynamics                                              3
+Sneha Kumari                                       Electrical Machines                                         3
+Rohit Raj                                          Database Management Systems                                 3
+Pooja Sharma                                       Artificial Intelligence                                     3
+Aditya Kumar                                       Machine Learning                                            3
+Kavita Devi                                        Computer Graphics                                           3
+Manish Raj                                         Operating Systems                                           3
+Riya Sharma                                        Fluid Mechanics                                             3
+Aman Verma                                         Structural Analysis                                         3
+Neha Gupta                                         Advanced Civil Engineering                                  3
+Saurabh Mishra                                     Artificial Intelligence                                     3
+Priyanka Kumari                                    Machine Learning                                            3
+Deepak Kumar                                       Thermodynamics                                              3
+
+15 rows selected.
+
+SQL> SELECT S.student_name, C.course_name, E.grade FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id INNER JOIN Course C ON E.course_id = C.course_id WHERE E.semester = 3;
+
+STUDENT_NAME                                       COURSE_NAME                                        GRADE
+-------------------------------------------------- -------------------------------------------------- -----
+Rahul Kumar                                        Structural Analysis                                A
+Anjali Singh                                       Advanced Civil Engineering                         B+
+Vikash Yadav                                       Thermodynamics                                     A
+Sneha Kumari                                       Electrical Machines                                B
+Rohit Raj                                          Database Management Systems                        A+
+Pooja Sharma                                       Artificial Intelligence                            A
+Aditya Kumar                                       Machine Learning                                   B+
+Kavita Devi                                        Computer Graphics                                  A
+Manish Raj                                         Operating Systems                                  B
+Riya Sharma                                        Fluid Mechanics                                    A
+Aman Verma                                         Structural Analysis                                B+
+Neha Gupta                                         Advanced Civil Engineering                         A
+Saurabh Mishra                                     Artificial Intelligence                            A+
+Priyanka Kumari                                    Machine Learning                                   B
+Deepak Kumar                                       Thermodynamics                                     A
+
+15 rows selected.
+
+SQL> SELECT C.course_name FROM Course C INNER JOIN Enrollment E ON C.course_id = E.course_id INNER JOIN Student S ON S.student_id = E.student_id WHERE S.student_id = 'S01';
+
+COURSE_NAME
+--------------------------------------------------
+Structural Analysis
+
+SQL> SELECT S.student_name, S.department_id, C.course_name FROM Student S INNER JOIN Course C ON S.department_id = C.department_id;
+
+STUDENT_NAME                                       DEPARTMENT_ID        COURSE_NAME
+-------------------------------------------------- -------------------- --------------------------------------------------
+Rahul Kumar                                        DO1                  Structural Analysis
+Anjali Singh                                       DO2                  Advanced Civil Engineering
+Vikash Yadav                                       DO3                  Thermodynamics
+Vikash Yadav                                       DO3                  Fluid Mechanics
+Sneha Kumari                                       DO4                  Electrical Machines
+Rohit Raj                                          DO5                  Database Management Systems
+Rohit Raj                                          DO5                  Operating Systems
+Pooja Sharma                                       DO6                  Artificial Intelligence
+Pooja Sharma                                       DO6                  Machine Learning
+Aditya Kumar                                       DO7                  Computer Graphics
+Kavita Devi                                        DO1                  Structural Analysis
+Manish Raj                                         DO2                  Advanced Civil Engineering
+Riya Sharma                                        DO3                  Thermodynamics
+Riya Sharma                                        DO3                  Fluid Mechanics
+Aman Verma                                         DO4                  Electrical Machines
+Neha Gupta                                         DO5                  Database Management Systems
+Neha Gupta                                         DO5                  Operating Systems
+Saurabh Mishra                                     DO6                  Artificial Intelligence
+Saurabh Mishra                                     DO6                  Machine Learning
+Priyanka Kumari                                    DO7                  Computer Graphics
+Deepak Kumar                                       DO1                  Structural Analysis
+
+21 rows selected.
+
+SQL> SELECT D.department_id, C.course_name FROM Department D INNER JOIN Course C ON D.department_id = C.department_id;
+
+DEPARTMENT_ID        COURSE_NAME
+-------------------- --------------------------------------------------
+DO1                  Structural Analysis
+DO2                  Advanced Civil Engineering
+DO3                  Thermodynamics
+DO4                  Electrical Machines
+DO5                  Database Management Systems
+DO6                  Artificial Intelligence
+DO6                  Machine Learning
+DO7                  Computer Graphics
+DO5                  Operating Systems
+DO3                  Fluid Mechanics
+
+10 rows selected.
+
+SQL> SELECT F.faculty_name, D.department_name FROM Faculty F INNER JOIN Department D ON F.department_id = D.department_id;
+
+FACULTY_NAME         DEPARTMENT_NAME
+-------------------- --------------------------------------------------
+Prof. Kunal Kumar    CIVIL ENGINEERING
+Prof. Akhilesh Kumar CIVIL ENGINEERING
+Prof. Akhilesh kumar CIVIL ENGINEERING WITH COMPUTER APPL
+Prof.Nishikant Kumar CIVIL ENGINEERING WITH COMPUTER APPL
+Prof. Arbind Kumar A MECHANICAL ENGINEERING
+Dr. Ajay Giri        MECHANICAL ENGINEERING
+Prof. Uttam Kumar    MECHANICAL ENGINEERING
+Prof. Manisha Kumari COMPUTER SCIENCE &ENGINEERING(AIML)
+Prof. Md. Izhar      COMPUTER SCIENCE &ENGINEERING(AIML)
+Prof. Amit Kumar     COMPUTER SCIENCE &ENGINEERING(AIML)
+Prof.Sujeet Kumar    COMPUTER SCIENCE &ENGINEERING
+Prof. Praveen Kumar  COMPUTER SCIENCE &ENGINEERING
+
+12 rows selected.
+
+SQL> SELECT S.student_name, C.course_name FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id INNER JOIN Course C ON E.course_id = C.course_id WHERE S.department_id = 'DO1';
+
+STUDENT_NAME                                       COURSE_NAME
+-------------------------------------------------- --------------------------------------------------
+Rahul Kumar                                        Structural Analysis
+Kavita Devi                                        Computer Graphics
+Deepak Kumar                                       Thermodynamics
+
+SQL> SELECT S.student_name, C.course_name FROM Student S INNER JOIN Enrollment E ON S.student_id = E.student_id INNER JOIN Course C ON E.course_id = C.course_id ORDER BY S.student_name ASC;
+
+STUDENT_NAME                                       COURSE_NAME
+-------------------------------------------------- --------------------------------------------------
+Aditya Kumar                                       Machine Learning
+Aman Verma                                         Structural Analysis
+Anjali Singh                                       Advanced Civil Engineering
+Deepak Kumar                                       Thermodynamics
+Kavita Devi                                        Computer Graphics
+Manish Raj                                         Operating Systems
+Neha Gupta                                         Advanced Civil Engineering
+Pooja Sharma                                       Artificial Intelligence
+Priyanka Kumari                                    Machine Learning
+Rahul Kumar                                        Structural Analysis
+Riya Sharma                                        Fluid Mechanics
+Rohit Raj                                          Database Management Systems
+Saurabh Mishra                                     Artificial Intelligence
+Sneha Kumari                                       Electrical Machines
+Vikash Yadav                                       Thermodynamics
+
+15 rows selected.
+
+SQL> SELECT F.faculty_name, C.course_name FROM Faculty F INNER JOIN Course C ON F.faculty_id = C.faculty_id ORDER BY C.credits DESC;
+
+FACULTY_NAME         COURSE_NAME
+-------------------- --------------------------------------------------
+Prof.Sujeet Kumar    Database Management Systems
+Prof. Amit Kumar     Operating Systems
+Prof. Md. Izhar      Machine Learning
+Prof. Akhilesh kumar Advanced Civil Engineering
+Prof. Kunal Kumar    Structural Analysis
+Prof. Manisha Kumari Artificial Intelligence
+Prof. Praveen Kumar  Computer Graphics
+Dr. Ajay Giri        Fluid Mechanics
+Prof. Arbind Kumar A Electrical Machines
+Prof. Uttam Kumar    Thermodynamics
+
+10 rows selected.
+
+SQL> SELECT C.course_name, COUNT(E.student_id) AS Student_Count FROM Course C INNER JOIN Enrollment E ON C.course_id = E.course_id GROUP BY C.course_name;
+
+COURSE_NAME                                        STUDENT_COUNT
+-------------------------------------------------- -------------
+Structural Analysis                                            2
+Advanced Civil Engineering                                     2
+Thermodynamics                                                 2
+Electrical Machines                                            1
+Database Management Systems                                    1
+Artificial Intelligence                                        2
+Machine Learning                                               2
+Computer Graphics                                              1
+Operating Systems                                              1
+Fluid Mechanics                                                1
+
+10 rows selected.
+
+SQL> SELECT F.faculty_name, COUNT(C.course_id) AS Course_Count FROM Faculty F INNER JOIN Course C ON F.faculty_id = C.faculty_id GROUP BY F.faculty_name;
+
+FACULTY_NAME         COURSE_COUNT
+-------------------- ------------
+Prof. Kunal Kumar               1
+Prof. Akhilesh kumar            1
+Prof. Arbind Kumar A            1
+Dr. Ajay Giri                   1
+Prof. Uttam Kumar               1
+Prof. Manisha Kumari            1
+Prof. Md. Izhar                 1
+Prof. Amit Kumar                1
+Prof.Sujeet Kumar               1
+Prof. Praveen Kumar             1
+
+10 rows selected.
+
+SQL> SELECT D.department_name, COUNT(S.student_id) AS Student_Count FROM Department D INNER JOIN Student S ON D.department_id = S.department_id GROUP BY D.department_name;
+
+DEPARTMENT_NAME                                    STUDENT_COUNT
+-------------------------------------------------- -------------
+CIVIL ENGINEERING                                              3
+CIVIL ENGINEERING WITH COMPUTER APPL                           2
+MECHANICAL ENGINEERING                                         2
+ELECTRICAL ENGINEERING                                         2
+COMPUTER SCIENCE &ENGINEERING                                  2
+COMPUTER SCIENCE &ENGINEERING(AIML)                            2
+3D ANIMATION AND GRAPHICS                                      2
+
+7 rows selected.
+
+SQL> SELECT C.course_name, MAX(E.grade) AS Max_Grade FROM Course C INNER JOIN Enrollment E ON C.course_id = E.course_id GROUP BY C.course_name;
+
+COURSE_NAME                                        MAX_G
+-------------------------------------------------- -----
+Structural Analysis                                B+
+Advanced Civil Engineering                         B+
+Thermodynamics                                     A
+Electrical Machines                                B
+Database Management Systems                        A+
+Artificial Intelligence                            A+
+Machine Learning                                   B+
+Computer Graphics                                  A
+Operating Systems                                  B
+Fluid Mechanics                                    A
+
+10 rows selected.
