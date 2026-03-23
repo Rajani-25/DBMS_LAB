@@ -1,0 +1,222 @@
+Q1: Total Students
+
+TOTAL_STUDENTS
+--------------
+15
+
+
+Q2: Total Faculty
+
+TOTAL_FACULTY
+-------------
+12
+
+
+Q3: Total Courses
+
+TOTAL_COURSES
+-------------
+10
+
+
+Q4: Maximum Credits
+
+MAX_CREDIT_COURSE
+-----------------
+4
+
+
+Q5: Minimum Credits
+
+MIN_CREDIT_COURSE
+-----------------
+3
+
+
+Q6: Students in Each Department
+
+DEPARTMENT   STUDENT_COUNT
+----------   -------------
+DO1          3
+DO2          2
+DO3          2
+DO4          2
+DO5          2
+DO6          2
+DO7          2
+
+
+Q7: Faculty in Each Department
+
+DEPARTMENT   FACULTY_COUNT
+----------   -------------
+DO1          2
+DO2          2
+DO3          3
+DO6          3
+DO5          2
+
+
+Q8: Courses in Each Department
+
+DEPARTMENT   COURSE_COUNT
+----------   ------------
+DO1          1
+DO2          1
+DO3          2
+DO4          1
+DO5          2
+DO6          2
+DO7          1
+
+
+Q9: Enrollment per Semester
+
+SEMESTER   ENROLLMENT_COUNT
+---------- ----------------
+3          15
+
+
+Q10: Students per Grade
+
+GRADE   STUDENT_COUNT
+-----   -------------
+A       7
+B+      3
+B       3
+A+      2
+
+
+Q11: Departments with More Than 2 Students
+
+DEPARTMENT   TOTAL_STUDENT
+----------   -------------
+DO1          3
+
+
+Q12: Semesters with More Than 2 Enrollments
+
+SEMESTER   COUNT(*)
+---------- --------
+3          15
+
+
+Q13: Grades Assigned to More Than One Student
+
+GRADE   NUMBER_OF_STUDENTS
+-----   ------------------
+A       7
+B+      3
+B       3
+A+      2
+
+
+Q14: Departments with More Than One Course
+
+DEPARTMENT   COUNT(*)
+----------   --------
+DO3          2
+DO5          2
+DO6          2
+
+
+Q15: Students Enrolled in Each Course
+
+COURSE_ID   COUNT(STUDENT_ID)
+----------  -----------------
+C01         2
+C02         2
+C03         2
+C04         1
+C05         1
+C06         2
+C07         2
+C08         1
+C09         1
+C10         1
+
+
+Q16: Course Name with Student Count
+
+COURSE_NAME                          STUDENT_COUNT
+----------------------------------- -------------
+Structural Analysis                  2
+Advanced Civil Engineering           2
+Thermodynamics                       2
+Electrical Machines                  1
+Database Management Systems          1
+Artificial Intelligence              2
+Machine Learning                     2
+Computer Graphics                    1
+Operating Systems                    1
+Fluid Mechanics                      1
+
+
+Q17: Students per Department
+
+DEPARTMENT   STUDENT_COUNT
+----------   -------------
+DO1          3
+DO2          2
+DO3          2
+DO4          2
+DO5          2
+DO6          2
+DO7          2
+
+
+Q18: Courses per Faculty
+
+FACULTY_NAME                         COURSE_COUNT
+----------------------------------- -------------
+Prof. Kunal Kumar                   1
+Prof. Akhilesh kumar                1
+Prof. Arbind Kumar Amar             1
+Dr. Ajay Giri                       1
+Prof. Uttam Kumar                   1
+Prof. Manisha Kumari Singh          1
+Prof. Md. Izhar                     1
+Prof. Amit Kumar                    1
+Prof.Sujeet Kumar                   1
+Prof. Praveen Kumar                 1
+
+
+Q19: Maximum Grade per Course
+
+COURSE_NAME                          MAX_GRADE
+----------------------------------- ---------
+Structural Analysis                  B+
+Advanced Civil Engineering           B+
+Thermodynamics                       A
+Electrical Machines                  B
+Database Management Systems          A+
+Artificial Intelligence              A+
+Machine Learning                     B+
+Computer Graphics                    A
+Operating Systems                    B
+Fluid Mechanics                      A
+
+
+Q20: Courses per Department
+
+DEPARTMENT   COUNT(*)
+----------   --------
+DO1          1
+DO2          1
+DO3          2
+DO4          1
+DO5          2
+DO6          2
+DO7          1
+
+
+Q21: Students per Semester
+
+SEMESTER   COUNT(STUDENT_ID)
+---------- -----------------
+3          15
+
+
+Q22: Courses with More Than 2 Students
+
+No rows selected.
